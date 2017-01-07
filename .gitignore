@@ -1,0 +1,9 @@
+# Git
+.gitconfig
+
+# Eclipse
+.project
+.settings/
+
+# Maven
+target/
