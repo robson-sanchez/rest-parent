@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>br.com.rvvsanchez.libs.api.rest</groupId>
+  <artifactId>rest-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <name>REST API Parent</name>
+  <description>REST API Best Pratices</description>
+
+  <inceptionYear>2017</inceptionYear>
+  
+  <developers>
+  	<developer>
+  		<id>robsonsanchez</id>
+  		<name>Robson Vinicius Vieira Sanchez</name>
+  		<email>robsonvinicius@gmail.com</email>
+  		<roles>
+  			<role>Software Architect</role>
+  			<role>Senior Software Engineer</role>
+  		</roles>
+  		<timezone>America/Sao_Paulo</timezone>
+  	</developer>
+  </developers>
+  
+  <scm>
+  	<connection>scm:git:https://github.com/robson-sanchez/rest-parent.git</connection>
+  	<developerConnection>scm:git:https://github.com/robson-sanchez/rest-parent.git</developerConnection>
+  	<url>scm:git:https://github.com/robson-sanchez/rest-parent.git</url>
+  </scm>
+  
+</project>
