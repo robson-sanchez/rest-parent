@@ -1,34 +1,118 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>br.com.rvvsanchez.libs.api.rest</groupId>
-  <artifactId>rest-parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  <name>REST API Parent</name>
-  <description>REST API Best Pratices</description>
+	<modelVersion>4.0.0</modelVersion>
 
-  <inceptionYear>2017</inceptionYear>
-  
-  <developers>
-  	<developer>
-  		<id>robsonsanchez</id>
-  		<name>Robson Vinicius Vieira Sanchez</name>
-  		<email>robsonvinicius@gmail.com</email>
-  		<roles>
-  			<role>Software Architect</role>
-  			<role>Senior Software Engineer</role>
-  		</roles>
-  		<timezone>America/Sao_Paulo</timezone>
-  	</developer>
-  </developers>
-  
-  <scm>
-  	<connection>scm:git:https://github.com/robson-sanchez/rest-parent.git</connection>
-  	<developerConnection>scm:git:https://github.com/robson-sanchez/rest-parent.git</developerConnection>
-  	<url>scm:git:https://github.com/robson-sanchez/rest-parent.git</url>
-  </scm>
-  
+	<groupId>br.com.rvvsanchez.libs.api.rest</groupId>
+	<artifactId>rest-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>REST API Parent</name>
+	<description>REST API Best Pratices</description>
+
+	<inceptionYear>2017</inceptionYear>
+
+	<developers>
+		<developer>
+			<id>robson-sanchez</id>
+			<name>Robson Vinicius Vieira Sanchez</name>
+			<email>robsonvinicius@gmail.com</email>
+			<roles>
+				<role>Software Architect</role>
+				<role>Senior Software Engineer</role>
+			</roles>
+			<timezone>America/Sao_Paulo</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/robson-sanchez/rest-parent.git</connection>
+		<developerConnection>scm:git:https://github.com/robson-sanchez/rest-parent.git</developerConnection>
+		<url>scm:git:https://github.com/robson-sanchez/rest-parent.git</url>
+	</scm>
+
+	<properties>
+		<!-- JDK -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<!-- plugins -->
+		<maven.compiler.version>3.6.0</maven.compiler.version>
+
+		<!-- compile -->
+		<jackson.version>2.8.4</jackson.version>
+		<jaxrs.version>2.0.1</jaxrs.version>
+		<jersey.version>2.25</jersey.version>
+		<slf4j.api.version>1.7.22</slf4j.api.version>
+
+		<!-- test -->
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.9.5</mockito.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.glassfish.jersey.containers</groupId>
+				<artifactId>jersey-container-servlet</artifactId>
+				<version>${jersey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-json-jackson</artifactId>
+				<version>${jersey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.jaxrs</groupId>
+				<artifactId>jackson-jaxrs-base</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- JAX-RS API -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>${jaxrs.version}</version>
+		</dependency>
+
+		<!-- Logging API -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.api.version}</version>
+		</dependency>
+
+		<!-- Unit testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
 </project>
